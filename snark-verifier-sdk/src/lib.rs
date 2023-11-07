@@ -41,7 +41,7 @@ pub type PlonkSuccinctVerifier<AS> =
 pub type SHPLONK = KzgAs<Bn256, Bdfg21>;
 pub type GWC = KzgAs<Bn256, Gwc19>;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 #[cfg_attr(feature = "halo2-axiom", derive(Serialize, Deserialize))]
 pub struct Snark {
     pub protocol: PlonkProtocol<G1Affine>,
