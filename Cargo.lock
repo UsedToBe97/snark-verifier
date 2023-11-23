@@ -740,20 +740,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "crossbeam"
-version = "0.8.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2801af0d36612ae591caa9568261fddce32ce6e08a7275ea334a06a4ad021a2c"
-dependencies = [
- "cfg-if",
- "crossbeam-channel",
- "crossbeam-deque",
- "crossbeam-epoch",
- "crossbeam-queue",
- "crossbeam-utils",
-]
-
-[[package]]
 name = "crossbeam-channel"
 version = "0.5.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -785,16 +771,6 @@ dependencies = [
  "crossbeam-utils",
  "memoffset",
  "scopeguard",
-]
-
-[[package]]
-name = "crossbeam-queue"
-version = "0.3.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1cfb3ea8a53f37c40dea2c7bedcbd88bdfae54f5e2175d6ecaff1c988353add"
-dependencies = [
- "cfg-if",
- "crossbeam-utils",
 ]
 
 [[package]]
@@ -1665,11 +1641,10 @@ checksum = "eabb4a44450da02c90444cf74558da904edde8fb4e9035a9a6a4e15445af0bd7"
 [[package]]
 name = "halo2-base"
 version = "0.3.0"
-source = "git+https://github.com/axiom-crypto/halo2-lib.git?tag=v0.3.0-ce#2cd4548650cd7c2bf45414fae67651ea7d93c4bd"
+source = "git+https://github.com/usedtobe97/halo2-lib.git?branch=tz#ec525cadda2718ba643577c616c2c5f6189afbf2"
 dependencies = [
  "ff",
  "halo2_proofs 0.2.0 (git+https://github.com/privacy-scaling-explorations/halo2.git?tag=v2023_02_02)",
- "halo2_proofs 0.2.0 (git+https://github.com/axiom-crypto/halo2.git?rev=7db51d3)",
  "itertools",
  "jemallocator",
  "log",
@@ -1686,7 +1661,7 @@ dependencies = [
 [[package]]
 name = "halo2-ecc"
 version = "0.3.0"
-source = "git+https://github.com/axiom-crypto/halo2-lib.git?tag=v0.3.0-ce#2cd4548650cd7c2bf45414fae67651ea7d93c4bd"
+source = "git+https://github.com/usedtobe97/halo2-lib.git?branch=tz#ec525cadda2718ba643577c616c2c5f6189afbf2"
 dependencies = [
  "ff",
  "group",
@@ -1740,27 +1715,9 @@ dependencies = [
  "blake2b_simd",
  "ff",
  "group",
- "halo2curves 0.3.1 (git+https://github.com/usedtobe97/halo2curves?branch=tz)",
+ "halo2curves 0.3.1",
  "rand_core",
  "rayon",
- "sha3 0.9.1",
- "tracing",
-]
-
-[[package]]
-name = "halo2_proofs"
-version = "0.2.0"
-source = "git+https://github.com/axiom-crypto/halo2.git?rev=7db51d3#7db51d3efb95dd7ce48b34456a680ed6d626be2d"
-dependencies = [
- "blake2b_simd",
- "crossbeam",
- "ff",
- "group",
- "halo2curves 0.3.1 (git+https://github.com/axiom-crypto/halo2.git?rev=7db51d3)",
- "rand",
- "rand_core",
- "rayon",
- "rustc-hash",
  "sha3 0.9.1",
  "tracing",
 ]
@@ -1814,24 +1771,6 @@ dependencies = [
  "rand_core",
  "serde",
  "serde_json",
- "static_assertions",
- "subtle",
-]
-
-[[package]]
-name = "halo2curves"
-version = "0.3.1"
-source = "git+https://github.com/axiom-crypto/halo2.git?rev=7db51d3#7db51d3efb95dd7ce48b34456a680ed6d626be2d"
-dependencies = [
- "ff",
- "group",
- "lazy_static",
- "num-bigint",
- "num-traits",
- "pasta_curves",
- "rand",
- "rand_core",
- "serde",
  "static_assertions",
  "subtle",
 ]
@@ -3725,7 +3664,7 @@ source = "git+https://github.com/privacy-scaling-explorations/snark-verifier?tag
 dependencies = [
  "ecc",
  "halo2_proofs 0.2.0 (git+https://github.com/privacy-scaling-explorations/halo2.git?tag=v2023_02_02)",
- "halo2curves 0.3.1 (git+https://github.com/usedtobe97/halo2curves?branch=tz)",
+ "halo2curves 0.3.1",
  "hex",
  "itertools",
  "lazy_static",
@@ -4703,13 +4642,3 @@ dependencies = [
  "strum_macros",
  "subtle",
 ]
-
-[[patch.unused]]
-name = "halo2-base"
-version = "0.3.0"
-source = "git+https://github.com/usedtobe97/halo2-lib.git?branch=tz#ec525cadda2718ba643577c616c2c5f6189afbf2"
-
-[[patch.unused]]
-name = "halo2-ecc"
-version = "0.3.0"
-source = "git+https://github.com/usedtobe97/halo2-lib.git?branch=tz#ec525cadda2718ba643577c616c2c5f6189afbf2"

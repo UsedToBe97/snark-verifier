@@ -4,10 +4,6 @@ members = [
     "snark-verifier-sdk",
 ]
 
-[patch."https://github.com/scroll-tech/halo2-lib.git"]
-halo2-base = { git = "https://github.com/usedtobe97/halo2-lib.git", branch = "tz", default-features = false, features = ["halo2-pse", "display"] }
-halo2-ecc =  { git = "https://github.com/usedtobe97/halo2-lib.git", branch = "tz", default-features = false, features = ["halo2-pse", "display"] }
-
 [patch."https://github.com/privacy-scaling-explorations/halo2curves"]
 halo2curves = { git = 'https://github.com/usedtobe97/halo2curves', branch = 'tz' }
 
