@@ -115,7 +115,6 @@ where
         PoseidonTranscript::<NativeLoader, Vec<u8>>::from_spec(vec![], POSEIDON_SPEC.clone());
     let rng = StdRng::from_entropy();
 
-    println!("before create proof!!!!");
     create_proof::<_, P, _, _, _, _>(params, pk, &[circuit], &[&instances], rng, &mut transcript)
         .unwrap();
     let proof = transcript.finalize();
@@ -206,7 +205,6 @@ where
             .with_num_instance(circuit.num_instance())
             .with_accumulator_indices(ConcreteCircuit::accumulator_indices()),
     );
-    // println!("protocol: {:?}", protocol);
 
     let instances = circuit.instances();
     #[cfg(feature = "halo2-axiom")]
@@ -259,7 +257,6 @@ pub fn gen_snark_shplonk<ConcreteCircuit: CircuitExt<Fr>>(
     circuit: ConcreteCircuit,
     path: Option<impl AsRef<Path>>,
 ) -> Snark {
-    println!("in gen_snark_shplonk!!!!!");
     gen_snark::<ConcreteCircuit, ProverSHPLONK<_>, VerifierSHPLONK<_>>(params, pk, circuit, path)
 }
 
